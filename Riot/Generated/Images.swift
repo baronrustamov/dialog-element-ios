@@ -165,6 +165,31 @@ internal class Asset: NSObject {
     internal static let importFilesButton = ImageAsset(name: "import_files_button")
     internal static let keyBackupLogo = ImageAsset(name: "key_backup_logo")
     internal static let keyVerificationSuccessShield = ImageAsset(name: "key_verification_success_shield")
+    internal static let _100 = ImageAsset(name: "100")
+    internal static let _114 = ImageAsset(name: "114")
+    internal static let _128 = ImageAsset(name: "128")
+    internal static let _144 = ImageAsset(name: "144")
+    internal static let _16 = ImageAsset(name: "16")
+    internal static let _172 = ImageAsset(name: "172")
+    internal static let _196 = ImageAsset(name: "196")
+    internal static let _216 = ImageAsset(name: "216")
+    internal static let _256 = ImageAsset(name: "256")
+    internal static let _32 = ImageAsset(name: "32")
+    internal static let _48 = ImageAsset(name: "48")
+    internal static let _50 = ImageAsset(name: "50")
+    internal static let _512 = ImageAsset(name: "512")
+    internal static let _55 = ImageAsset(name: "55")
+    internal static let _57 = ImageAsset(name: "57")
+    internal static let _64 = ImageAsset(name: "64")
+    internal static let _72 = ImageAsset(name: "72")
+    internal static let _88 = ImageAsset(name: "88")
+    internal static let appIcon1024 = ImageAsset(name: "AppIcon-1024")
+    internal static let appIcon20 = ImageAsset(name: "AppIcon-20")
+    internal static let appIcon29 = ImageAsset(name: "AppIcon-29")
+    internal static let appIcon40 = ImageAsset(name: "AppIcon-40")
+    internal static let appIcon60 = ImageAsset(name: "AppIcon-60")
+    internal static let appIcon76 = ImageAsset(name: "AppIcon-76")
+    internal static let appIcon835 = ImageAsset(name: "AppIcon-83.5")
     internal static let oldLogo = ImageAsset(name: "old_logo")
     internal static let cameraCapture = ImageAsset(name: "camera_capture")
     internal static let cameraPlay = ImageAsset(name: "camera_play")
@@ -353,7 +378,35 @@ internal class Asset: NSObject {
     internal static let voiceBroadcastTileLive = ImageAsset(name: "voice_broadcast_tile_live")
     internal static let voiceBroadcastTileMic = ImageAsset(name: "voice_broadcast_tile_mic")
     internal static let voiceBroadcastTimeLeft = ImageAsset(name: "voice_broadcast_time_left")
-    internal static let launchScreenLogo = ImageAsset(name: "launch_screen_logo")
+    internal static let launchScreenLogo1 = ImageAsset(name: "launch_screen_logo1")
+    internal static let tabRoomsSelected = ImageAsset(name: "tab_rooms_selected")
+    internal static let appleEmojisData = DataAsset(name: "apple_emojis_data")
+    internal static let elementSymbol = ImageAsset(name: "Element Symbol")
+    internal static let _100 = ImageAsset(name: "100")
+    internal static let _114 = ImageAsset(name: "114")
+    internal static let _128 = ImageAsset(name: "128")
+    internal static let _144 = ImageAsset(name: "144")
+    internal static let _16 = ImageAsset(name: "16")
+    internal static let _172 = ImageAsset(name: "172")
+    internal static let _196 = ImageAsset(name: "196")
+    internal static let _216 = ImageAsset(name: "216")
+    internal static let _256 = ImageAsset(name: "256")
+    internal static let _32 = ImageAsset(name: "32")
+    internal static let _48 = ImageAsset(name: "48")
+    internal static let _50 = ImageAsset(name: "50")
+    internal static let _512 = ImageAsset(name: "512")
+    internal static let _55 = ImageAsset(name: "55")
+    internal static let _57 = ImageAsset(name: "57")
+    internal static let _64 = ImageAsset(name: "64")
+    internal static let _72 = ImageAsset(name: "72")
+    internal static let _88 = ImageAsset(name: "88")
+    internal static let appIcon1024 = ImageAsset(name: "AppIcon-1024")
+    internal static let appIcon20 = ImageAsset(name: "AppIcon-20")
+    internal static let appIcon29 = ImageAsset(name: "AppIcon-29")
+    internal static let appIcon40 = ImageAsset(name: "AppIcon-40")
+    internal static let appIcon60 = ImageAsset(name: "AppIcon-60")
+    internal static let appIcon76 = ImageAsset(name: "AppIcon-76")
+    internal static let appIcon835 = ImageAsset(name: "AppIcon-83.5")
   }
   @objcMembers
   @objc(AssetSharedImages) internal class SharedImages: NSObject {
@@ -367,6 +420,27 @@ internal class Asset: NSObject {
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
 // MARK: - Implementation Details
+
+internal struct DataAsset {
+  internal fileprivate(set) var name: String
+
+  @available(iOS 9.0, tvOS 9.0, watchOS 6.0, macOS 10.11, *)
+  internal var data: NSDataAsset {
+    return NSDataAsset(asset: self)
+  }
+}
+
+@available(iOS 9.0, tvOS 9.0, watchOS 6.0, macOS 10.11, *)
+internal extension NSDataAsset {
+  convenience init!(asset: DataAsset) {
+    let bundle = BundleToken.bundle
+    #if os(iOS) || os(tvOS) || os(watchOS)
+    self.init(name: asset.name, bundle: bundle)
+    #elseif os(macOS)
+    self.init(name: NSDataAsset.Name(asset.name), bundle: bundle)
+    #endif
+  }
+}
 
 @objcMembers
 internal class ImageAsset: NSObject {
