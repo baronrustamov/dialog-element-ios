@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Element Symbol.png",
+      "filename" : "Element Symbol@3x 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Element Symbol@2x.png",
+      "filename" : "Element Symbol@3x 2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
