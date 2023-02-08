@@ -50,10 +50,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<true/>
-	<key>ITSEncryptionExportComplianceCode</key>
-	<string>d1dd539c-d21c-43e2-92e2-212c5269565c</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>http</string>
@@ -127,18 +123,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>UTExportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.text</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Mention Pills</string>
-			<key>UTTypeIdentifier</key>
-			<string>im.vector.app.pills</string>
-		</dict>
-	</array>
+	<array/>
 	<key>applicationGroupIdentifier</key>
 	<string>$(APPLICATION_GROUP_IDENTIFIER)</string>
 	<key>baseBundleIdentifier</key>
